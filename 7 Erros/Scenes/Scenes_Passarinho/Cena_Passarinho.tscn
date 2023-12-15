@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Passarinho/passarinho_do_mal_default.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Interface_Jogo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Fundo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Scenes_Passarinho/Erro1_Passarinho.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Scenes_Passarinho/Erro3_Passarinho.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Scenes_Passarinho/Erro2_Passarinho.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Cena_Pintor.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Cronometro.tscn" type="PackedScene" id=8]
+
+[node name="Cena_Passarinho" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Fundo" parent="." instance=ExtResource( 3 )]
+
+[node name="Passarinho_Original" type="Sprite" parent="."]
+position = Vector2( 600, 540 )
+texture = ExtResource( 1 )
+
+[node name="Erros" type="Node2D" parent="."]
+
+[node name="Erro1_Passarinho" parent="Erros" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 1320, 540 )
+
+[node name="Erro2_Passarinho" parent="Erros" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 1320, 540 )
+
+[node name="Erro3_Passarinho" parent="Erros" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 1320, 540 )
+
+[node name="Interface" parent="." instance=ExtResource( 2 )]
+
+[node name="Cronometro" parent="." instance=ExtResource( 8 )]
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 921, 513 )
+
+[node name="End_Game" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 932, 502 )
