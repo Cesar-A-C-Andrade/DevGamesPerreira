@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://levels/vitoria.gd" type="Script" id=1]
+[ext_resource path="res://assets/interface/janela de vitoria e derrota/vitoria.png" type="Texture" id=2]
+[ext_resource path="res://assets/imagens jogo/Fundo.png" type="Texture" id=3]
+[ext_resource path="res://assets/interface/botão home/home completo.png" type="Texture" id=4]
+[ext_resource path="res://assets/level-win-6416.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/Cave-Story.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 38
+font_data = ExtResource( 6 )
+
+[node name="Vitoria" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Fundo" type="Sprite" parent="."]
+position = Vector2( 528, 301 )
+scale = Vector2( 0.909058, 0.909058 )
+texture = ExtResource( 3 )
+
+[node name="Vitoria2" type="Sprite" parent="."]
+position = Vector2( 499, 290 )
+scale = Vector2( 0.514774, 0.461012 )
+texture = ExtResource( 2 )
+
+[node name="Home" type="Button" parent="."]
+margin_left = 414.0
+margin_top = 338.0
+margin_right = 791.0
+margin_bottom = 574.0
+rect_scale = Vector2( 0.427056, 0.416309 )
+icon = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -23.825
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 417.0
+margin_top = 252.0
+margin_right = 581.0
+margin_bottom = 276.0
+custom_fonts/font = SubResource( 1 )
+text = "Muito bem!!!"
+
+[connection signal="pressed" from="Home" to="." method="_on_Home_pressed"]
