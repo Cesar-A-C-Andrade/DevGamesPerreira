@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://levels/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/interface/botão jogar/jogar completo.png" type="Texture" id=2]
+[ext_resource path="res://assets/fundo_inicio.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/menu_musica.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/interface/botão créditos/créditos completo.png" type="Texture" id=5]
+
+[sub_resource type="Theme" id=1]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -29.859
+autoplay = true
+
+[node name="FundoInicio" type="Sprite" parent="."]
+position = Vector2( 507, 296 )
+scale = Vector2( 0.577009, 0.578125 )
+texture = ExtResource( 3 )
+
+[node name="JogarButton" type="Button" parent="."]
+margin_left = 448.0
+margin_top = 384.0
+margin_right = 882.0
+margin_bottom = 620.0
+rect_scale = Vector2( 0.355017, 0.370852 )
+theme = SubResource( 1 )
+icon = ExtResource( 2 )
+
+[node name="SairButton" type="Button" parent="."]
+visible = false
+margin_left = 320.0
+margin_top = 368.0
+margin_right = 725.0
+margin_bottom = 469.0
+theme = SubResource( 1 )
+text = "SAIR"
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 0.026
+anchor_bottom = 0.033
+margin_left = 458.0
+margin_top = 489.0
+margin_right = 569.376
+margin_bottom = 552.2
+
+[node name="CréditosCompleto" type="Sprite" parent="Button"]
+position = Vector2( 69, 42 )
+scale = Vector2( 0.349476, 0.400875 )
+texture = ExtResource( 5 )
+
+[connection signal="pressed" from="JogarButton" to="." method="_on_JogarButton_pressed"]
+[connection signal="pressed" from="SairButton" to="." method="_on_SairButton_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

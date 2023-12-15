@@ -1,0 +1,209 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://cano.gd" type="Script" id=1]
+[ext_resource path="res://assets/canos/cano_L.png" type="Texture" id=2]
+[ext_resource path="res://assets/canos/cano_mais.png" type="Texture" id=3]
+[ext_resource path="res://assets/canos/cano_inicial.png" type="Texture" id=4]
+[ext_resource path="res://assets/canos/cano_reto.png" type="Texture" id=5]
+[ext_resource path="res://respostas.gd" type="Script" id=6]
+[ext_resource path="res://assets/interface/setinha/direita.png" type="Texture" id=7]
+[ext_resource path="res://assets/interface/corações/cheio.png" type="Texture" id=8]
+[ext_resource path="res://levels/next_level.gd" type="Script" id=9]
+[ext_resource path="res://assets/imagens jogo/Queijo Quadrado.png" type="Texture" id=10]
+[ext_resource path="res://assets/ratinho.png" type="Texture" id=11]
+[ext_resource path="res://assets/imagens jogo/Fundo.png" type="Texture" id=12]
+[ext_resource path="res://assets/jogo_musica.wav" type="AudioStream" id=13]
+[ext_resource path="res://levels/Area2D.gd" type="Script" id=14]
+[ext_resource path="res://assets/interface/botão home/home completo.png" type="Texture" id=15]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 121, 227, 0, 0, 0, 0, 289, 222, 0, 0, 0, 0, 290, 476, 0, 0, 0, 0, 708, 476, 0, 0, 0, 0, 711, 270, 0, 0, 0, 0, 839, 273 )
+}
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 40.1995
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Fundo" type="Sprite" parent="."]
+position = Vector2( 528, 301 )
+scale = Vector2( 0.909058, 0.909058 )
+texture = ExtResource( 12 )
+
+[node name="CanoInicial" type="Sprite" parent="."]
+position = Vector2( 87, 231 )
+rotation = 4.71239
+scale = Vector2( 5, 6 )
+texture = ExtResource( 4 )
+
+[node name="CanoL" type="Sprite" parent="."]
+position = Vector2( 258, 265 )
+rotation = 6.28319
+scale = Vector2( 5, 6 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="CanoL2" type="Sprite" parent="."]
+position = Vector2( 308, 452 )
+rotation = -1.5708
+scale = Vector2( 5, 6 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="CanoL3" type="Sprite" parent="."]
+position = Vector2( 663, 459 )
+rotation = -4.71239
+scale = Vector2( 5, 6 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="CanoMais" type="Sprite" parent="."]
+position = Vector2( 479, 485 )
+rotation = 1.5708
+scale = Vector2( 5, 6 )
+texture = ExtResource( 3 )
+
+[node name="CanoL4" type="Sprite" parent="."]
+position = Vector2( 739, 304 )
+rotation = -6.28319
+scale = Vector2( 5, 6 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="CanoReto" type="Sprite" parent="."]
+position = Vector2( 476, 231 )
+rotation = 1.5708
+scale = Vector2( 5, 6 )
+texture = ExtResource( 5 )
+
+[node name="CanoL5" type="Sprite" parent="."]
+position = Vector2( 517, 85 )
+rotation = 1.5708
+scale = Vector2( 5, 6 )
+texture = ExtResource( 2 )
+
+[node name="CanoL6" type="Sprite" parent="."]
+position = Vector2( 687, 96 )
+rotation = 3.15381
+scale = Vector2( 5, 6 )
+texture = ExtResource( 2 )
+
+[node name="NextLevel" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 9 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Life" type="Control" parent="UI"]
+margin_left = 23.0
+margin_top = 16.0
+margin_right = 63.0
+margin_bottom = 56.0
+
+[node name="Hearts" type="TextureRect" parent="UI/Life"]
+anchor_left = -0.574999
+anchor_top = -0.375
+anchor_right = -0.574999
+anchor_bottom = -0.375
+margin_left = 24.0
+margin_top = 19.0
+margin_right = 305.0
+margin_bottom = 273.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+
+[node name="Hearts2" type="TextureRect" parent="UI/Life"]
+anchor_left = -0.574999
+anchor_top = -0.375
+anchor_right = -0.574999
+anchor_bottom = -0.375
+margin_left = 165.0
+margin_top = 19.0
+margin_right = 446.0
+margin_bottom = 273.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+
+[node name="Hearts3" type="TextureRect" parent="UI/Life"]
+anchor_left = -0.574999
+anchor_top = -0.375
+anchor_right = -0.574999
+anchor_bottom = -0.375
+margin_left = 93.0
+margin_top = 19.0
+margin_right = 374.0
+margin_bottom = 273.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+
+[node name="trigger_button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 933.0
+margin_top = 19.0
+margin_right = 1010.0
+margin_bottom = 77.0
+shortcut_in_tooltip = false
+
+[node name="Sprite" type="Sprite" parent="trigger_button"]
+position = Vector2( 42, 29 )
+scale = Vector2( 0.19163, 0.20283 )
+texture = ExtResource( 7 )
+
+[node name="QueijoQuadrado" type="Sprite" parent="."]
+position = Vector2( 920, 286 )
+scale = Vector2( 0.122294, 0.122294 )
+texture = ExtResource( 10 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -29.859
+autoplay = true
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 121, 227 )
+rotation = 1.56108
+rotate = false
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+position = Vector2( -3.02901, 2.97072 )
+script = ExtResource( 14 )
+
+[node name="RatinhoLarry" type="Sprite" parent="Path2D/PathFollow2D/Area2D"]
+position = Vector2( -1.00897, 1.01733 )
+rotation = -1.56108
+scale = Vector2( 0.159732, 0.155567 )
+z_index = 2
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+position = Vector2( 1.00967, -0.990242 )
+shape = SubResource( 2 )
+
+[node name="Home" type="Button" parent="."]
+margin_left = 846.0
+margin_top = 19.0
+margin_right = 926.0
+margin_bottom = 76.0
+
+[node name="Sprite" type="Sprite" parent="Home"]
+position = Vector2( 39, 27 )
+scale = Vector2( 0.237276, 0.256128 )
+texture = ExtResource( 15 )
+
+[connection signal="pressed" from="trigger_button" to="NextLevel" method="_on_trigger_button_pressed"]
+[connection signal="pressed" from="trigger_button" to="Path2D/PathFollow2D/Area2D" method="_on_trigger_button_pressed"]
+[connection signal="pressed" from="Home" to="." method="_on_Home_pressed"]
